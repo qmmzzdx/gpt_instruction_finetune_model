@@ -5,7 +5,7 @@
 ## GPT 目录结构
 
 ```
-gpt_model/
+gpt_instruction_finetune_model/
 ├── datasets/                                     # 存放训练数据集
 │   └── the-verdict.txt                           # 用于训练的小型文本文件
 ├── img/                                          # 存放模型结构图
