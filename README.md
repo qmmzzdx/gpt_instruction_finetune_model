@@ -249,8 +249,8 @@ $$
 梯度裁剪的公式（L2范数裁剪）
   - 计算梯度的L2范数（长度）：
 
-$$
-   \text{grad\_norm} = \sqrt{\sum_{i} g_i^2}
+$$ 
+gradnorm = \sqrt{\sum_{i} g_i^2} 
 $$
 
   - $g_i$ 是梯度的每个分量（每个参数的梯度）。
@@ -263,15 +263,15 @@ $$
 梯度裁剪（Gradient Clipping）公式的简单解释：计算所有梯度的平方和，再开平方，得到梯度的总长度。
 
 **判断是否裁剪**：
-  - 如果 grad_norm > threshold，说明梯度太大，需要裁剪。
-  - 如果 grad_norm ≤ threshold，梯度正常，不需要裁剪。
+  - 如果 gradnorm > threshold，说明梯度太大，需要裁剪。
+  - 如果 gradnorm ≤ threshold，梯度正常，不需要裁剪。
 
 **裁剪方法**：
 
 如果梯度太大，就按比例缩小梯度，使其长度等于 threshold：
 
 $$
-\text{clipped\_grad} = \frac{\text{threshold}}{\text{grad\_norm}} \cdot \text{grad}
+\text{clipped-grad} = \frac{\text{threshold}}{\text{gradnorm}} \cdot \text{grad}
 $$
 
 这样，裁剪后的梯度长度就是 threshold，不会过大。
